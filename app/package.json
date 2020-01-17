@@ -48,6 +48,10 @@
     "node-sass": "^4.13.1",
     "onchange": "3.3.0",
     "uglify-js": "3.3.9",
-    "watchify": "3.10.0"
+    "watchify": "3.10.0",
+    "cryptiles": ">=4.1.2",
+    "diff": ">=3.5.0",
+    "js-yaml": ">=3.13.1",
+    "mime": ">=1.4.1"
   }
 }

@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  db:
+    image: postgres:10.1-alpine
+    volumes:
+      - /var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    env_file:
+      - ./db.env
+
+  web:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - 8003:8003
+      - 2300:2300
+      - 3000:3000
+    depends_on:
+      - db
+    env_file:
+      - ./web.env
+      - ./db.env
+

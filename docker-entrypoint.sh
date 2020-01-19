@@ -29,6 +29,9 @@ echo "Analyzing data fixtures."
 
 python /home/docker/code/app/manage.py migrate --noinput
 
+## Create a superuser account from the environment vars found in web.env; password isn't required and will default to env variable
+python /home/docker/code/app/manage.py createsuperuser --username $DJANGO_SUPERUSER_USERNAME --email $DJANGO_SUPERUSER_EMAIL --no-input
+
 #Reset the data each time in the dev environment
 if [ $RUNNING_IN_AWS -eq 0 ]; then
     echo "Loading fixture data into local environment..."

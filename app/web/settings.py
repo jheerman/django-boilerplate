@@ -1,4 +1,4 @@
-import os
+import os, sys
 
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
@@ -7,12 +7,30 @@ BASE_DIR = PACKAGE_ROOT
 
 DEBUG = True
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "dev.db",
+DB_USER = os.getenv("POSTGRES_USER")
+DB_PWD = os.getenv("POSTGRES_PASSWORD")
+DB_NAME = os.getenv("POSTGRES_DB")
+DB_HOST = os.getenv("POSTGRES_HOST")
+DB_PROVIDER = os.getenv("DB_PROVIDER", "SQLite")
+
+if 'test' in sys.argv or DB_PROVIDER == "SQLite":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": "dev.db",
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': DB_NAME,
+            'USER': DB_USER,
+            'PASSWORD': DB_PWD,
+            'HOST': DB_HOST,
+            'PORT': 5432  # default postgres port
+        }
+    }
 
 ALLOWED_HOSTS = [
     "localhost",

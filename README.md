@@ -28,6 +28,7 @@ $ npm install
 
 $ ./manage.py migrate
 $ ./manage.py loaddata sites
+$ ./manage.py createsuperuser
 $ npm run dev
 ```
 Browse to http://localhost:3000/

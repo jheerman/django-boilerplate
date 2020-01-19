@@ -139,6 +139,7 @@ INSTALLED_APPS = [
 
     # project
     "web",
+    "core",
 ]
 
 ADMIN_URL = "admin:index"
@@ -188,5 +189,6 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
 ACCOUNT_USE_AUTH_AUTHENTICATE = True
 
 AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
     "account.auth_backends.UsernameAuthenticationBackend",
 ]

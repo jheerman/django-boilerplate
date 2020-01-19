@@ -61,7 +61,6 @@ RUN chmod +x /home/docker/code/docker-entrypoint.sh
 
 EXPOSE 8003
 EXPOSE 2300
-EXPOSE 3000
 
 ENTRYPOINT ["bash", "/home/docker/code/docker-entrypoint.sh"]
 

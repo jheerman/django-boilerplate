@@ -1,4 +1,4 @@
-# django web application boilerplate
+# Django web application boilerplate
 
 ## Getting Started
 
@@ -46,7 +46,11 @@ $ docker-compose up
 
 Browse to http://localhost:8003/
 
-Django Admin Superuser
+#### Django Admin Superuser
+
+```
 user=admin
 password=admin
-http://localhost:8003/admin
+```
+
+Browse to http://localhost:8003/admin

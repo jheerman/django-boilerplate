@@ -15,6 +15,11 @@ uWSGI is a WSGI implementation. In this example we will set up uWSGI so that it 
 Make sure you are using a virtual environment of some sort (e.g. `virtualenv` or
 `pyenv`).
 
+###
+Known issues: 
+A specified in Django 3.0 release note, django.utils.six is removed. In case you need it, it is advised to use pypi packages instead
+https://github.com/dmkoch/django-jsonfield/issues/225
+
 ```
 $ pipenv install
 $ pipenv shell

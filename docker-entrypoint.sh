@@ -18,8 +18,6 @@ echo "Analyzing data fixtures."
 
 python /home/docker/code/app/manage.py migrate --noinput
 
-. create_superuser.sh
-
 ## Create a superuser account from the environment vars found in web.env; password isn't required and will default to env variable
 ## Note: This only works in Django 3.0, but there are dependencies (account, jsonfield2) that are not compatible yet
 #python /home/docker/code/app/manage.py createsuperuser --username $DJANGO_SUPERUSER_USERNAME --email $DJANGO_SUPERUSER_EMAIL --noinput
@@ -28,6 +26,9 @@ python /home/docker/code/app/manage.py migrate --noinput
 if [ $RUNNING_IN_AWS -eq 0 ]; then
     echo "Loading fixture data into local environment..."
     python /home/docker/code/app/manage.py loaddata sites
+    python /home/docker/code/app/manage.py loaddata accounts
+    python /home/docker/code/app/manage.py loaddata profiles
+    python /home/docker/code/app/manage.py loaddata users
 fi
 
 python /home/docker/code/app/manage.py collectstatic --noinput

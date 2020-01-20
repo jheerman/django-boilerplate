@@ -1,0 +1,20 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$csnt44hwACL0$dHhabzUa+oV80wJuTb7d5YLqPnw5vvoEYXZsrK1eO5c=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@mailinator.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-01-20T02:57:33.128Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

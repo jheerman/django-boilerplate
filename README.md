@@ -45,3 +45,8 @@ $ docker-compose up
 ```
 
 Browse to http://localhost:8003/
+
+Django Admin Superuser
+user=admin
+password=admin
+http://localhost:8003/admin

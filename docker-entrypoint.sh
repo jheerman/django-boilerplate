@@ -26,9 +26,9 @@ python /home/docker/code/app/manage.py migrate --noinput
 if [ $RUNNING_IN_AWS -eq 0 ]; then
     echo "Loading fixture data into local environment..."
     python /home/docker/code/app/manage.py loaddata sites
-    python /home/docker/code/app/manage.py loaddata accounts
-    python /home/docker/code/app/manage.py loaddata profiles
     python /home/docker/code/app/manage.py loaddata users
+    python /home/docker/code/app/manage.py loaddata profiles
+    python /home/docker/code/app/manage.py loaddata accounts
 fi
 
 python /home/docker/code/app/manage.py collectstatic --noinput

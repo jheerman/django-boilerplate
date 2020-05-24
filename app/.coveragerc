@@ -1,0 +1,16 @@
+[run]
+omit =
+    */migrations/*
+    */tests/*
+    */.tox/*
+    */admin.py
+    */__init__.py
+
+[report]
+show_missing = True
+omit =
+    */migrations/*
+    */.tox/*
+    */tests/*
+    */admin.py
+    */__init__.py

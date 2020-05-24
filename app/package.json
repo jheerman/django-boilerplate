@@ -45,7 +45,7 @@
     "exorcist": "1.0.0",
     "gulp-sass": "^4.0.2",
     "hoek": ">=4.2.1",
-    "jquery": ">=3.4.0",
+    "jquery": ">=3.5.0",
     "js-yaml": ">=3.13.1",
     "jsdom": "11.6.2",
     "jsdom-global": "3.0.2",

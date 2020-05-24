@@ -1,3 +1,8 @@
 -r requirements-zero.txt
 -r requirements-account.txt
 psycopg2-binary
+tox
+pytest
+coverage
+pytest-django
+django-debug-toolbar

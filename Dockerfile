@@ -1,7 +1,7 @@
 # Copyright 2019 Agco 
 #
 
-FROM python:3.7.2-stretch
+FROM python:3.7.4-stretch
 
 # Configure the environment vars in Docker container
 ARG FUSE_ENV

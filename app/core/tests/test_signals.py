@@ -11,8 +11,8 @@ class UserSignalTestCase(TestCase):
     Ensure test can create the profile when the user was created.
     """
     def test_ensure_profile_created_when_user_created(self):
-        self.assertEquals(Profile.objects.all().count(), 0)
-        self.assertEquals(User.objects.all().count(), 0)
+        self.assertEqual(Profile.objects.all().count(), 0)
+        self.assertEqual(User.objects.all().count(), 0)
 
         User.objects.create_user(first_name='John',
                                  last_name='Doe',
@@ -20,8 +20,8 @@ class UserSignalTestCase(TestCase):
                                  username='bob',
                                  password='password')
 
-        self.assertEquals(User.objects.all().count(), 1)
-        self.assertEquals(Profile.objects.all().count(), 1)
+        self.assertEqual(User.objects.all().count(), 1)
+        self.assertEqual(Profile.objects.all().count(), 1)
 
     """
     Ensure profile can be deleted when user was deleted.
@@ -33,10 +33,10 @@ class UserSignalTestCase(TestCase):
                                         username='bob',
                                         password='password')
 
-        self.assertEquals(Profile.objects.all().count(), 1)
-        self.assertEquals(User.objects.all().count(), 1)
+        self.assertEqual(Profile.objects.all().count(), 1)
+        self.assertEqual(User.objects.all().count(), 1)
 
         user.delete()
 
-        self.assertEquals(Profile.objects.all().count(), 0)
-        self.assertEquals(User.objects.all().count(), 0)
+        self.assertEqual(Profile.objects.all().count(), 0)
+        self.assertEqual(User.objects.all().count(), 0)

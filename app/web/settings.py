@@ -3,6 +3,7 @@ import os, sys
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
+APP_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = PACKAGE_ROOT
 
 DEBUG = True
@@ -124,6 +125,7 @@ TEMPLATES = [
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -154,6 +156,7 @@ INSTALLED_APPS = [
     "account",
     "pinax.eventlog",
     "pinax.webanalytics",
+    "debug_toolbar",
 
     # project
     "web",
@@ -209,4 +212,8 @@ ACCOUNT_USE_AUTH_AUTHENTICATE = True
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "account.auth_backends.UsernameAuthenticationBackend",
+]
+
+INTERNAL_IPS = [
+    '127.0.0.1',
 ]

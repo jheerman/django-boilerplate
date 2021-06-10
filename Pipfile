@@ -10,7 +10,7 @@ coverage = "*"
 django-debug-toolbar = "*"
 
 [packages]
-django = "~=2.2.13"
+django = "~=2.2.24"
 pinax-cli = "*"
 uwsgi = "*"
 psycopg2-binary = "*"
